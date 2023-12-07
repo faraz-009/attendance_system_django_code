@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>User page 1</title>
+</head>
+<body>
+    {%load static%}
+
+     <!-- Hearder part of the layout -->
+     <nav class = " flex bg-pink-300 py-4 bg-gradient-to-tr from-cyan-300 to-blue-500 " >
+        <div class=" flex space-x-5 my-auto ">
+            <img src=" {%static 'images/logo.png' %}" alt="image" class="w-12 rounded-3xl mx-4">
+            <h4 class="font-serif text-3xl text-gray-700 font-extrabold font">Automated Attendance system</h4>
+        </div>
+        <ul class="flex my-auto space-x-20 absolute inset-y-auto right-32 text-2xl">
+            <li  class="hover:underline"><a href="{%url 'home' %}">Home</a></li>
+            <li class="hover:underline"><a href="{%url 'about' %}">About</a></li>
+            <li class="hover:underline"><a href="{%url 'contact'%}">Contact</a></li>
+        </ul>
+    </nav>
+<!-- main layout -->
+    <div class="main">
+        <h3 class="my-1 bg-green-500 px-4">{{leavemessage}}</h3>
+        <div class="adminname flex">
+            <div class=" flex w-5/6 h-14 mx-auto rounded-lg drop-shadow-lg hover:drop-shadow-2xl  bg-lime-50 my-6">
+                <h3 class=" my-auto mx-9 text-3xl font-thin">{{guserid.emp_name}} -<b> {{guserid.emp_id}}</b> --- <b><span class={{cls}}>({{time}})</span></b></h3>
+            </div>
+        </div>
+        
+        <div class="flex my-20">
+            <div class="navbutton flex space-x-28 mx-auto ">
+
+                <div class="leave w-52 h-52 flex flex-col bg-cyan-100 hover:drop-shadow-lg rounded-lg"> <a href="{%url 'leaveapplication' %}"><img src=" {%static 'images/leave.png' %}" alt="leave"></a>
+                    <h4 class="mx-auto my-1 font-bold text-cyan-900 ">Apply Leave</h4>
+                </div>
+                
+                <div class="absent w-52 h-52 flex flex-col bg-cyan-100 hover:drop-shadow-lg rounded-lg"> <a href="{%url 'appliedleavestatus' %}"><img src="{%static 'images/status.png' %}" alt="Requests"></a>
+                    <h4 class="mx-auto my-1 font-bold text-cyan-900 ">Check Leave Status</h4>
+                </div>
+
+               
+                </div> -->
+            </div>
+
+            
+        </div>
+        </div>
+
+    </div>
+    
+</body>
+</html>

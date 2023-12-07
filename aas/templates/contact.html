@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Contact</title>
+</head>
+<body class="bg-sky-100 ">
+    {% load static %}
+    <!-- Hearder part of the layout -->
+    <nav class="flex py-6 h-24 bg-gradient-to-tr from-cyan-300 to-blue-500 fixed w-full ">
+        <div class=" flex space-x-5 my-auto ">
+            <img src="{% static 'images/logo.png' %}" alt="image" class="w-12 rounded-3xl mx-4">
+            <h4 class="font-serif text-3xl text-gray-700 font-extrabold font">Automated Attendance system</h4>
+        </div>
+        <ul class="flex my-auto space-x-20 absolute inset-y-auto right-32 text-2xl">
+            <li class="hover:underline"><a href="{%url 'home' %}">Home</a></li>
+            <li class="hover:underline"><a href="{%url 'about' %}"> About</a></li>
+            <li class="hover:underline"><a href="{%url 'contact'%}">Contact</a></li>
+
+        </ul>
+    </nav>
+    <div class= "flex flex-col bg-sky-100 pt-24 " >
+        <h1 class="mt-2 mx-auto text-3xl justify-center   bg-clip-text text-transparent bg-gradient-to-br from-zinc-800 to-emerald-700 font-serif font-bold f">   MOHD ASJAD  </h1>
+        
+        <div class="flex mt-3"> 
+            <div class="max-w-5xl my-2 m mx-auto bg-gradient-to-br from-lime-100 to-lime-300 rounded-lg border-spacing-3 px-3">
+                <h1 class="text-3xl font-bold">Department of Computer science</h1><br>
+                <h2 class="text-2xl">Aligarh Muslim University</h2><br>
+                <h2 class="text-2xl">Phone No: 9151701602 </h2><br>
+                <h2 class="text-2xl">Email Address: asjad.ajic@gmail.com<h2><br>
+
+
+            </div>
+        </div>
+    
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Leave History </title>
+</head>
+<body id="leave">
+    {%load static%}
+    <!-- Hearder part of the layout -->
+    <nav class = " flex bg-pink-300 py-4 bg-gradient-to-tr from-cyan-300 to-blue-500" >
+        <div class=" flex space-x-5 my-auto ">
+            <img src="{% static 'images/logo.png' %}" alt="image" class="w-12 rounded-3xl mx-4">
+            <h4 class="font-serif text-3xl text-gray-700 font-extrabold font">Automated Attendance system</h4>
+        </div>
+        <ul class="flex my-auto space-x-20 absolute inset-y-auto right-32 text-2xl">
+            <li  class="hover:underline"><a href="{%url 'home' %}">Home</a></li>
+            <li class="hover:underline"><a href="{%url 'about' %}">About</a></li>
+            <li class="hover:underline"><a href="{%url 'contact'%}">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- main part of this page -->
+    <h3 class="my-1 bg-green-500 px-4">{{message}}</h3>
+
+    <div class="maintable flex py-10 ">
+        <div class="centertablediv w-5/6 flex mx-auto">
+            <table class="w-5/6  border-separate border-spacing-2 border border-slate-500 mx-auto bg-gradient-to-br from-white to-lime-100 rounded-xl">
+                <thead class="">
+                    <tr>
+                        <th class="bg-gray-200 py-2">Emplyee Id</th>
+                        <th class="py-2">Employee Name</th>
+                        <th class="bg-gray-200 py-2">Leave type</th>
+                        <th class=" py-2">Leave Start Date</th>
+                        <th class="bg-gray-200 py-2" >Leave End Date</th>
+                        <th class=" py-2">Leave day </tr>
+                        <th class=" bg-gray-200py-2">Status </th>
+                    </tr>
+                </thead>
+                <tbody class="">
+                    {%for item in leavestatus %}
+                    <tr>
+                        <td class=" text-center font-bold bg-gray-200"><a href="/worker/profile/{{item.emp_id}}" target="_blank">{{item.emp_id}}</a></td>
+                        <td class=" text-center">{{item.emp_name}}</td>
+                        <td class=" text-center bg-gray-200">{{item.l_type}}</td>
+                        <td class=" text-center ">{{item.s_date}}</td>
+                        <td class=" text-center bg-gray-200">{{item.e_date}}</td>
+                        <td class=" text-center ">{{item.l_day}}</td>
+                        <td class=" text-centerbg-gray-200">{{item.l_status}}</td>
+                            
+                    </tr>
+                    {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    <!-- <script>
+        let text1 ="";
+        for (let i = 0; i < 10; i++){
+        text1  += `<div class="Cleave flex my-4 mx-56 h-40 py-5 bg-cyan-100  border-solid border-2 border-sky-600 rounded-2xl ">
+            <div class="profileimg mx-3 my-auto ">
+                <a href="#"><img class="w-24 my-auto" src="./images/profile.png" alt=""></a>
+            </div>
+            <div class="name my-auto mx-4 font-bold text-xl text-rose-700">
+                <h3>Worker_Name</h3>
+            </div>
+            <div class="name my-auto mx-4 font-bold text-xl text-rose-700">
+                <h3>Start_date</h3>
+            </div>
+            <div class="name my-auto mx-4 font-bold text-xl text-rose-700">
+                <h3>End_date</h3>
+            </div>
+            <div class="name my-auto mx-4 font-bold text-xl text-rose-700">
+                <h3>no_of_day</h3>
+            </div>
+            <div class="btn ml-10  flex justify-end">
+                <form class="flex space-x-5 my-auto" action="">
+                    <input class="border-solid border-2 border-green-800 rounded-full px-3 py-1 hover:bg-green-800  hover:drop-shadow-2xl hover:text-white" type="submit" value="Accept">
+                    <input class="border-solid border-2 border-red-900 rounded-full px-3 py-1 hover:bg-red-900 hover:drop-shadow-2xl hover:text-white"  type="submit" value="Reject">
+                    <input class="border-solid border-2 border-yellow-800 rounded-full px-3 py-1 hover:bg-yellow-800 hover:drop-shadow-2xl hover:text-black"  type="submit" value="Cancel">
+        
+                </form>
+            </div>
+        </div>`;
+    }
+    document.getElementById("leave").innerHTML= text1;
+    </script> -->
+    
+</body>
+
+
+</html>

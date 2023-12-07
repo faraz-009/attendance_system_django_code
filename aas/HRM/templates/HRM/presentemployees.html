@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Persent Worker</title>
+</head>
+<body>
+  {% load static %}
+    <!-- Hearder part of the layout -->
+
+    <nav class = " flex bg-pink-300 py-4 bg-gradient-to-tr from-cyan-300 to-blue-500" >
+        <div class=" flex space-x-5 my-auto ">
+            <img src="{% static 'images/logo.png' %}" alt="image" class="w-12 rounded-3xl mx-4">
+            <h4 class="font-serif text-3xl text-gray-700 font-extrabold font">Automated Attendance system</h4>
+        </div>
+        <ul class="flex my-auto space-x-20 absolute inset-y-auto right-32 text-2xl">
+            <li  class="hover:underline"><a href="{%url 'home' %}">Home</a></li>
+            <li class="hover:underline"><a href="{%url 'about' %}">About</a></li>
+            <li class="hover:underline"><a href="{%url 'contact'%}">Contact</a></li>
+        </ul>
+    </nav>
+
+<!-- main layout -->
+
+
+<div class="maintable flex py-10">
+<div class="centertablediv w-5/6 flex mx-auto">
+<table class="w-5/6  border-separate border-spacing-2 border border-slate-500 mx-auto bg-gradient-to-br from-white to-lime-100 rounded-xl">
+    <thead class="">
+      <tr>
+        <th class="bg-gray-200 py-2">Emplyee Id</th>
+         <th class="py-2">Employee Name</th>
+        <th class="bg-gray-200 py-2">Employee Arrive Time</th>
+        <th class=" py-2">Total Attendance</th>
+
+        
+      </tr>
+    </thead>
+    <tbody class="">
+      {%for item in persent %}
+      <tr>
+        <td class=" text-center font-bold bg-gray-200"><a href="/HRM/profile/{{item.emp_id}}" target="_blank">{{item.emp_id}}</a></td>
+        <td class=" text-center">{{item.emp_name}}</td>
+        <td class=" text-center bg-gray-200 py-2">{{item.attendance_time}} </td>
+        <td class=" text-center py-2">{{item.attendance_count}} </td>
+      </tr>
+
+      {% endfor %}
+     
+    </tbody>
+  </table>
+</div>
+</div>
+    
+</body>
+</html>

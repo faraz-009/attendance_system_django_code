@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>About</title>
+    
+</head>
+<body class="bg-sky-100 ">
+    {% load static %}
+    <!-- Hearder part of the layout -->
+    <nav class="flex py-6 h-24 bg-gradient-to-tr from-cyan-300 to-blue-500 fixed w-full ">
+        <div class=" flex space-x-5 my-auto ">
+            <img src="{% static 'images/logo.png' %}" alt="image" class="w-12 rounded-3xl mx-4">
+            <h4 class="font-serif text-3xl text-gray-700 font-extrabold font">Automated Attendance system</h4>
+        </div>
+        <ul class="flex my-auto space-x-20 absolute inset-y-auto right-32 text-2xl">
+            <li class="hover:underline"><a href="{%url 'home' %}">Home</a></li>
+            <li class="hover:underline"><a href="{%url 'about' %}"> About</a></li>
+            <li class="hover:underline"><a href="{%url 'contact'%}">Contact</a></li>
+
+        </ul>
+    </nav>
+<div class= "flex flex-col pt-24 " >
+    <h1 class="mt-2 mx-auto text-3xl justify-center   bg-clip-text text-transparent bg-gradient-to-br from-zinc-800 to-emerald-700 font-serif font-bold f">    ABOUT    </h1>
+    
+    <div class="flex mt-3"> 
+        <div class="max-w-5xl my-2 m mx-auto bg-gradient-to-br from-lime-100 to-lime-300 rounded-lg border-spacing-3 px-3">
+            <p>Welcome to ABC Inc., where punctuality and commitment are the cornerstones of our success. We understand the importance of being on time and showing up ready to work, and we encourage all of our employees to prioritize punctuality as a key element of their professional approach.</p>
+
+               <p> At ABC Inc., we believe that every moment counts, and we are committed to providing a workplace culture that values and rewards promptness and reliability. We recognize that being on time is not only respectful to your colleagues and clients, but it also helps to create a positive and productive work environment where everyone can thrive.</p>
+                
+                <p> understand that life can be unpredictable, and we offer a range of flexible scheduling options to help our employees manage their work-life balance. However, we also believe that it is important to honor our commitments to our clients and colleagues, and we expect all of our employees to arrive on time and ready to work during their scheduled hours.</p>
+                
+                <p>We recognize that being punctual can sometimes be challenging, and we are committed to supporting our employees in their efforts to be on time. We offer training and resources to help our team members develop effective time-management strategies, and we provide ongoing feedback and coaching to help them stay on track.</p>
+                
+                <p>At ABC Inc., we believe that a culture of punctuality and commitment is essential for our success, and we are proud of our team members who consistently demonstrate these values. We welcome you to join our team and help us create a workplace where punctuality and reliability are key ingredients of our shared success
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>

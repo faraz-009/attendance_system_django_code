@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Home</title>
+</head>
+<body>
+    {% load static %}
+    <!-- Hearder part of the layout -->
+    <nav class = " flex bg-pink-300 py-4 bg-gradient-to-tr from-cyan-300 to-blue-500" >
+        <div class=" flex space-x-5 my-auto ">
+            <img src=" {% static 'images/logo.png' %}" alt="image" class="w-12 rounded-3xl mx-4">
+            <h4 class="font-serif text-3xl text-gray-700 font-extrabold font">Automated Attendance system</h4>
+        </div>
+        <ul class="flex my-auto space-x-20 absolute inset-y-auto right-32 text-2xl">
+            <li  class="hover:underline"><a href="{%url 'home' %}">Home</a></li>
+            <li class="hover:underline"><a href="{%url 'about' %}">About</a></li>
+            <li class="hover:underline"><a href="{%url 'contact'%}">Contact</a></li>
+        </ul>
+    </nav>
+<!-- main page loayout -->
+    <div class="flex">
+        <div class="login flex flex-col mx-auto my-28 bg-lime-100 shadow-lg px-10 py-5 rounded-lg">
+            <h4 class="mx-auto my-4 text-2xl font-bold text-lime-600 ">Login As Admin </h4>
+            <form action="/HRM/hrlogin"  method="post">
+                {% csrf_token %}
+                <label for="username">Username</label><br>
+                <input type="text" name="username" id="uname" placeholder="Enter your Employee id" class="my-4 border w-full border-slate-800 px-5 py-1 hover:drop-shadow-2xl rounded">
+                <label for="password">Password</label><br>
+                <input type="password" name="password" id="uname" placeholder="Enter your password" class="my-4 border w-full border-slate-800 px-5 py-1 hover:drop-shadow-2xl rounded">
+
+                <input class="my-4 border w-full border-slate-800 rounded-full py-1  " type="submit" value="Submit">
+            </form>
+            <a class="mx-auto border-separate" href="change.html">Change Password!</a>
+        </div>
+    </div>
+
+    <!-- Footer layout of the website -->
+    <div class="footer bg-slate-700 h-10 flex ">
+        <h4 class="mx-auto">CopyRigth</h4>
+
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Employee Management</title>
+</head>
+<body>
+    {% load static %}
+    <!-- Hearder part of the layout -->
+    <nav class = " flex bg-pink-300 py-4 bg-gradient-to-tr from-cyan-300 to-blue-500" >
+        <div class=" flex space-x-5 my-auto ">
+            <img src="{% static 'images/logo.png' %}" alt="image" class="w-12 rounded-3xl mx-4">
+            <h4 class="font-serif text-3xl text-gray-700 font-extrabold font">Automated Attendance system</h4>
+        </div>
+        <ul class="flex my-auto space-x-20 absolute inset-y-auto right-32 text-2xl">
+            <li  class="hover:underline"><a href="{%url 'home' %}">Home</a></li>
+            <li class="hover:underline"><a href="{%url 'about' %}">About</a></li>
+            <li class="hover:underline"><a href="{%url 'contact'%}">Contact</a></li>
+            
+        </ul>
+    </nav>
+
+    <!-- MAin website layout -->
+    <h3 class="my-1 bg-green-500 px-4">{{addmess}}</h3>
+    <!-- <div class="main flex flex-col">
+        <div class=" flex w-5/6 h-14 mx-auto rounded-lg drop-shadow-lg hover:drop-shadow-2xl text-white  bg-lime-100 my-6">
+            <h3 class=" my-auto mx-5 text-3xl text-black font-thin">{{guserid.emp_name}} -<b> {{guserid.emp_id}}</b></h3>
+        </div> -->
+
+        <!-- <div class="adminname flex w-1/2 mx-auto">
+                <div class=" flex w-1/4 h-14 mx-auto rounded-lg drop-shadow-lg hover:drop-shadow-2xl text-white  bg-blue-600 my-6">
+                    <h3 class=" my-auto mx-auto text-3xl font-thin">Update</h3>
+                </div>
+
+                <div class=" flex w-1/4 h-14 mx-auto rounded-lg drop-shadow-lg hover:drop-shadow-2xl text-white  bg-red-800 my-6">
+                    <h3 class=" my-auto mx-auto text-3xl font-thin">Delete</h3>
+                </div>
+        </div> -->
+
+
+        <div class="login flex flex-col mx-auto my-10 bg-gradient-to-br from-white to-lime-100 w-4/6 px-10 py-5 rounded-lg">
+            <h4 class="mx-auto my-4 text-2xl font-bold text-lime-600 ">Add Employee  </h4>
+            <form class="flex flex-col" action="/HRM/addemp"  method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                    <!-- {{form.as_p}} -->
+                    {{form}}
+           
+
+                <input class="my-4 mx-auto border w-52 border-slate-900 rounded-full py-1  hover:bg-green-700 duration-300 hover:text-white" type="submit" value="Add">
+            </form>
+        </div>
+    </div>
+    
+</body>
+</html>

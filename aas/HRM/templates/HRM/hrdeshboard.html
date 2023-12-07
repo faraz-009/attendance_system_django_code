@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Admin page 1</title>
+</head>
+
+<body class="bg-zinc-100">
+    {% load static %}
+    <!-- Hearder part of the layout -->
+    <nav class=" flex bg-pink-300 py-4 bg-gradient-to-tr from-cyan-300 to-blue-500">
+        <div class=" flex space-x-5 my-auto ">
+            <img src="{% static 'images/logo.png' %}" alt="image" class="w-12 rounded-3xl mx-4">
+            <h4 class="font-serif text-3xl text-gray-700 font-extrabold font">Automated Attendance system</h4>
+        </div>
+        <ul class="flex my-auto space-x-20 absolute inset-y-auto right-32 text-2xl">
+            <li class="hover:underline"><a href="{%url 'home' %}">Home</a></li>
+            <li class="hover:underline"><a href="{%url 'about' %}">About</a></li>
+            <li class="hover:underline"><a href="{%url 'contact'%}">Contact</a></li>
+        </ul>
+    </nav>
+    <!-- main layout -->
+    <div class="main">
+        <div class="adminname flex">
+            <div class=" flex w-5/6 h-14 mx-auto rounded-lg drop-shadow-lg hover:drop-shadow-2xl  bg-lime-50 my-6">
+                <h3 class=" my-auto mx-9 text-3xl font-thin">{{userid.emp_name}} -<b> {{userid.emp_id}}</b> </h3>
+            </div>
+        </div>
+
+        <div class="flex my-20">
+            <div class="navbutton flex space-x-28 mx-auto ">
+                <div class="attendance flex flex-col w-52 h-52 hover:drop-shadow-lg bg-cyan-100 rounded-lg">
+                    <a href="{%url 'presentemployees'%}">
+                        <img src="{% static 'images/attendance.png' %}" alt="Attendance">
+                    </a>
+                    <h4 class="mx-auto my-1 font-bold text-cyan-900 ">Check Worker Attendance</h4>
+                </div>
+
+                <div class="leave w-52 h-52 flex flex-col bg-cyan-100 hover:drop-shadow-lg rounded-lg">
+                    <a href="{%url 'showleave'%}">
+                        <img src="{% static 'images/leave.png' %}" alt="leave">
+                    </a>
+                    <h4 class="mx-auto my-1 font-bold text-cyan-900 ">Check Leave Requests</h4>
+                </div>
+
+                <div class="absent w-52 h-52 flex flex-col bg-cyan-100 hover:drop-shadow-lg rounded-lg">
+                    <a href="{%url 'absentworker'%}">
+                        <img src="{% static 'images/absent.png' %}" alt="Absent">
+                    </a>
+                    <h4 class="mx-auto my-1 font-bold text-cyan-900 ">Check Absent Worker</h4>
+                </div>
+
+                <div class="absent w-52 h-52 flex flex-col bg-cyan-100 hover:drop-shadow-lg rounded-lg">
+                    <a href="{%url 'openempaddpage' %}">
+                        <img src="{% static 'images/adduser.png' %}" alt="add user">
+                    </a>
+                    <h4 class="mx-auto my-1 font-bold text-cyan-900 ">Add New Worker</h4>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+</body>
+
+</html>
