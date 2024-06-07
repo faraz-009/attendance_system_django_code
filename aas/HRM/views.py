@@ -12,7 +12,7 @@ def index(request):
     return render(request, 'HRM/home.html')
 
 def profile(request, id ):
-    data = Employee.objects.get(emp_id = id)
+    data = Employee.objects.get(emp_id = i)
     param = {
         'data': data
     }
